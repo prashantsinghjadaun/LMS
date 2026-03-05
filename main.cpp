@@ -97,6 +97,30 @@ void issueBook(){
 
     cout<<"Book not found\n";
 }
+void returnBook(){
+
+    int id;
+    cout<<"Enter Book ID to return: ";
+    cin>>id;
+
+    for(auto &b : library){
+
+        if(b.id == id){
+
+            if(!b.issued){
+                cout<<"Book was not issued\n";
+            }
+            else{
+                b.issued = false;
+                cout<<"Book returned successfully\n";
+            }
+
+            return;
+        }
+    }
+
+    cout<<"Book not found\n";
+}
 
 int main(){
 
@@ -108,7 +132,8 @@ int main(){
         cout<<"2 Show Books\n";
         cout<<"3 Search Book\n";
         cout<<"4 Issue Book\n";
-        cout<<"5 Exit\n";
+        cout<<"5 Return Book\n";
+        cout<<"6 Exit\n";
 
         cout<<"Enter choice: ";
         cin>>choice;
@@ -124,7 +149,11 @@ else if(choice==3)
 
 else if(choice==4)
     issueBook();
+
 else if(choice==5)
+    returnBook();
+
+else if(choice==6)
     break;
 
         else
