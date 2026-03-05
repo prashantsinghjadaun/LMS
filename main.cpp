@@ -47,6 +47,32 @@ void showBooks(){
         cout<<endl;
     }
 }
+void searchBook(){
+
+    int id;
+    cout<<"Enter Book ID to search: ";
+    cin>>id;
+
+    for(auto &b : library){
+
+        if(b.id == id){
+
+            cout<<"Book Found\n";
+            cout<<"Title: "<<b.title<<" ";
+
+            if(b.issued)
+                cout<<"(Issued)";
+            else
+                cout<<"(Available)";
+
+            cout<<endl;
+
+            return;
+        }
+    }
+
+    cout<<"Book not found\n";
+}
 
 int main(){
 
@@ -54,10 +80,10 @@ int main(){
 
     while(true){
 
-        cout<<"\nLibrary Management System\n";
         cout<<"1 Add Book\n";
         cout<<"2 Show Books\n";
-        cout<<"3 Exit\n";
+        cout<<"3 Search Book\n";
+        cout<<"4 Exit\n";
 
         cout<<"Enter choice: ";
         cin>>choice;
@@ -69,6 +95,9 @@ else if(choice==2)
     showBooks();
 
 else if(choice==3)
+    searchBook();
+
+else if(choice==4)
     break;
 
         else
