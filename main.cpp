@@ -27,6 +27,26 @@ getline(cin,b.title);
 
     cout<<"Book Added Successfully\n";
 }
+void showBooks(){
+
+    if(library.empty()){
+        cout<<"No books in library\n";
+        return;
+    }
+
+    for(auto &b : library){
+
+        cout<<"ID: "<<b.id<<" ";
+        cout<<"Title: "<<b.title<<" ";
+
+        if(b.issued)
+            cout<<"(Issued)";
+        else
+            cout<<"(Available)";
+
+        cout<<endl;
+    }
+}
 
 int main(){
 
@@ -36,16 +56,20 @@ int main(){
 
         cout<<"\nLibrary Management System\n";
         cout<<"1 Add Book\n";
-        cout<<"2 Exit\n";
+        cout<<"2 Show Books\n";
+        cout<<"3 Exit\n";
 
         cout<<"Enter choice: ";
         cin>>choice;
 
         if(choice==1)
-            addBook();
+    addBook();
 
-        else if(choice==2)
-            break;
+else if(choice==2)
+    showBooks();
+
+else if(choice==3)
+    break;
 
         else
             cout<<"Invalid choice\n";
