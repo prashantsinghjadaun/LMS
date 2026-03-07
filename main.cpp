@@ -138,7 +138,11 @@ void showRecentBooks(){
         cout<<"Title: "<<library[i].title<<endl;
     }
 }
+void totalBooks(){
 
+    cout<<"Total books in library: "<<library.size()<<endl;
+
+}
 int main(){
 
     int choice;
@@ -157,7 +161,8 @@ int main(){
         cout<<"4 Issue Book\n";
         cout<<"5 Return Book\n";
         cout<<"6 New Arrivals\n";
-        cout<<"7 Exit\n";
+        cout<<"7 Total Books\n";
+        cout<<"8 Exit\n";
 
         cout<<"Enter choice: ";
         cin>>choice;
@@ -181,6 +186,9 @@ else if(choice==6)
     showRecentBooks();
 
 else if(choice==7)
+    totalBooks();
+
+else if(choice==8)
     break;
 
         else
