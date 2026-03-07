@@ -143,6 +143,19 @@ void totalBooks(){
     cout<<"Total books in library: "<<library.size()<<endl;
 
 }
+
+void countAvailableBooks(){
+
+    int count = 0;
+
+    for(auto &b : library){
+        if(!b.issued){
+            count++;
+        }
+    }
+
+    cout<<"Available books: "<<count<<endl;
+}
 int main(){
 
     int choice;
@@ -162,7 +175,9 @@ int main(){
         cout<<"5 Return Book\n";
         cout<<"6 New Arrivals\n";
         cout<<"7 Total Books\n";
-        cout<<"8 Exit\n";
+        cout<<"8 Available Books Count\n";
+        cout<<"9 Exit\n";
+        
 
         cout<<"Enter choice: ";
         cin>>choice;
@@ -189,6 +204,9 @@ else if(choice==7)
     totalBooks();
 
 else if(choice==8)
+    countAvailableBooks();
+
+else if(choice==9)
     break;
 
         else
